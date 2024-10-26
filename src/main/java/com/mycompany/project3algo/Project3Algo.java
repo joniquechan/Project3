@@ -33,6 +33,7 @@ public class Project3Algo {
             int l = sc.nextInt();
 
             // initialize array
+            Dominion[][][] galaxy = new Dominion[n][m][k]; 
 
             // store monarchies as objects and process in reverse order to make them grow
             // should we use a stack or a list
@@ -44,15 +45,69 @@ public class Project3Algo {
 
                 for (int x = 0; x < numDominions; x++) {
                     dominions[x] = sc.nextInt();
-                    Union.makeSet(dominions[x]);
+                    //Set.makeSet(dominions[x]);
                 }
 
                 monarchies.push(new Monarchy(dominions));
             }
             
             int disconnectedMonths = 0;
-            // pop and process secessions
-            // check if empire is disconnected
+            int numSets = 0;
+            while(!monarchies.empty()){
+                Monarchy mon = monarchies.pop();
+                int[] dominions = mon.getDominions();
+
+                Dominion[] doms = new Dominion[dominions.length];
+                for(int j = 0; j < dominions.length; j++){
+                    int nn = 0;
+                    int mm = 0;
+                    int kk = 0;
+                    int dom = dominions[j];
+                    while(dom > n){
+                        if(mm < m - 1){
+                            mm++;
+                        }
+                        else{
+                            kk++;
+                            mm = 0;
+                        }
+                        dom = dom - n;
+                    }
+                    nn = dom;
+
+                    Dominion d = new Dominion(nn, mm, kk);
+                    galaxy[nn][mm][kk] = d;
+                    doms[j] = d;
+                    Set.makeSet(galaxy[nn][mm][kk]);
+                }
+
+                for(int j = 1; j < doms.length; j++){
+                    Set.union(doms[0], doms[j]);
+                }
+                numSets++;
+                
+                //check neighbors and connect if necessary
+                for(int j = 1; j < doms.length; j++){
+                    Dominion dom = doms[j];
+                    //check left
+                    if(dom.n != 0){
+                        Dominion left = galaxy[dom.n - 1][dom.m][dom.k];
+                        if(left != null){
+                            if(Set.findSet(left) != Set.findSet(dom)){
+                                Set.union(dom, left);
+                                numSets --;
+                            }
+                        }
+                    }
+                    //check right
+                    //check front
+                    //check back
+                    //check up
+                    //check down
+                }
+
+            }
+            // check numSets == 1 and update months
         }
 
         sc.close();

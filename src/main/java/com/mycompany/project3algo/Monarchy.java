@@ -4,8 +4,8 @@ public class Monarchy {
     private int[] dominions;
 
     // constructor
-    public Monarchy(int[] dominions) {
-        dominions = dominions;
+    public Monarchy(int[] d) {
+        dominions = d;
     }
 
     // getter
