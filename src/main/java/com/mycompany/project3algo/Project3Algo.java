@@ -24,15 +24,19 @@ public class Project3Algo {
         int problems = sc.nextInt();
 
         for (int i = 0; i < problems; i++) {
-            int n = sc.nextInt();
-            int m = sc.nextInt();
+            // 3d array dimensions
+            int n = sc.nextInt(); 
+            int m = sc.nextInt(); 
             int k = sc.nextInt();
+
+            // num of independent monarchies
             int l = sc.nextInt();
 
             // initialize array
 
-            // store dominions
-            Stack<int[]> monarchies = new Stack<>();
+            // store monarchies as objects and process in reverse order to make them grow
+            // should we use a stack or a list
+            Stack<Monarchy> monarchies = new Stack<>();
 
             for (int j = 0; j < l; j++) {
                 int numDominions = sc.nextInt();
@@ -40,11 +44,17 @@ public class Project3Algo {
 
                 for (int x = 0; x < numDominions; x++) {
                     dominions[x] = sc.nextInt();
+                    Union.makeSet(dominions[x]);
                 }
 
-                monarchies.push(dominions);
+                monarchies.push(new Monarchy(dominions));
             }
             
+            int disconnectedMonths = 0;
+            // pop and process secessions
+            // check if empire is disconnected
         }
+
+        sc.close();
     }
 }
