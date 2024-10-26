@@ -4,6 +4,7 @@
 
 package com.mycompany.project3algo;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  *
@@ -21,16 +22,29 @@ public class Project3Algo {
 
         // problem instances
         int problems = sc.nextInt();
-        
-        // array size
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int k = sc.nextInt();
-        int l = sc.nextInt();
-        for (int i = 0; i < l; i++) {
-            int numDominions = sc.nextInt();
-            int dom1 = sc.nextInt();
-            int dom2 = sc.nextInt();
+
+        for (int i = 0; i < problems; i++) {
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            int k = sc.nextInt();
+            int l = sc.nextInt();
+
+            // initialize array
+
+            // store dominions
+            Stack<int[]> monarchies = new Stack<>();
+
+            for (int j = 0; j < l; j++) {
+                int numDominions = sc.nextInt();
+                int[] dominions = new int[numDominions];
+
+                for (int x = 0; x < numDominions; x++) {
+                    dominions[x] = sc.nextInt();
+                }
+
+                monarchies.push(dominions);
+            }
+            
         }
     }
 }
