@@ -69,10 +69,10 @@ public class Project3Algo {
 
                 for(int j = 1; j < doms.length; j++){
                     Set.union(doms[0], doms[j]);
-                    numSets--;
                 }
                 
-                //numSets++;
+                System.out.println("number of sets: " + numSets);
+                // numSets++;
                 
                 //check neighbors and connect if necessary
                 for(int j = 1; j < doms.length; j++){
@@ -84,6 +84,7 @@ public class Project3Algo {
                         if(left != null && Set.findSet(left) != Set.findSet(dom)){
                             Set.union(dom, left);
                             numSets--;
+                            System.out.println("number of sets: " + numSets);
                         }
                     }
 
@@ -93,6 +94,7 @@ public class Project3Algo {
                         if (right != null && Set.findSet(right) != Set.findSet(dom)) {
                             Set.union(dom, right);
                             numSets--;
+                            System.out.println("number of sets: " + numSets);
                         }
                     }
 
@@ -102,6 +104,7 @@ public class Project3Algo {
                         if (front != null && Set.findSet(front) != Set.findSet(dom)) {
                             Set.union(dom, front);
                             numSets--;
+                            System.out.println("number of sets: " + numSets);
                         }
                     }
                     //check back
@@ -110,6 +113,7 @@ public class Project3Algo {
                         if (back != null && Set.findSet(back) != Set.findSet(dom)) {
                             Set.union(dom, back);
                             numSets--;
+                            System.out.println("number of sets: " + numSets);
                         }
                     }
                     //check up
@@ -118,6 +122,7 @@ public class Project3Algo {
                         if (up != null && Set.findSet(up) != Set.findSet(dom)) {
                             Set.union(dom, up);
                             numSets--;
+                            System.out.println("number of sets: " + numSets);
                         }
                     }
                     //check down
@@ -126,15 +131,16 @@ public class Project3Algo {
                         if (down != null && Set.findSet(down) != Set.findSet(dom)) {
                             Set.union(dom, down);
                             numSets--;
+                            System.out.println("number of sets: " + numSets);
                         }
                     }
                 }
-
+                // check numSets == 1 and update months
+                if (numSets > 1) {
+                    disconnectedMonths++;
+                }
             }
-            // check numSets == 1 and update months
-            if (numSets > 1) {
-                disconnectedMonths++;
-            }
+            
 
             System.out.println("disconnected months: " + disconnectedMonths);
         }
