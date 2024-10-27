@@ -59,21 +59,10 @@ public class Project3Algo {
 
                 Dominion[] doms = new Dominion[dominions.length];
                 for(int j = 0; j < dominions.length; j++){
-                    int nn = 0;
-                    int mm = 0;
-                    int kk = 0;
                     int dom = dominions[j];
-                    while(dom > n){
-                        if(mm < m - 1){
-                            mm++;
-                        }
-                        else{
-                            kk++;
-                            mm = 0;
-                        }
-                        dom = dom - n;
-                    }
-                    nn = dom;
+                    int nn = dom / (n*m);
+                    int mm = (dom % n*m) / n;
+                    int kk = (dom % n*m) % n;
 
                     Dominion d = new Dominion(nn, mm, kk);
                     galaxy[nn][mm][kk] = d;
