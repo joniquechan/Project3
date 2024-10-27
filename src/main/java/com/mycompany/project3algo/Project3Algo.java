@@ -69,13 +69,13 @@ public class Project3Algo {
 
                 for(int j = 1; j < doms.length; j++){
                     Set.union(doms[0], doms[j]);
+                    numSets--;
                 }
                 
                 System.out.println("number of sets: " + numSets);
-                // numSets++;
                 
                 //check neighbors and connect if necessary
-                for(int j = 1; j < doms.length; j++){
+                for(int j = 0; j < doms.length; j++){
                     Dominion dom = doms[j];
                     
                     //check left
@@ -140,7 +140,6 @@ public class Project3Algo {
                     disconnectedMonths++;
                 }
             }
-            
 
             System.out.println("disconnected months: " + disconnectedMonths);
         }
