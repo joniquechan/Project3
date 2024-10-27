@@ -7,8 +7,16 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
+ * This class is the main file.
  *
- * @author User
+ * @author Roni Ebenezer, Jonique Chan
+ * @version 1.0
+ * File: Project3Algo.java
+ * Created: Oct 2024
+ * ©Copyright Cedarville University, its Computer Science faculty, 
+ * and the authors. All rights reserved.
+ *
+ * Description: This class is the main file that reads the input in and initializes the problems and corresponding solutions. 
  */
 
 
