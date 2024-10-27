@@ -21,8 +21,7 @@ import java.util.Stack;
 
 
 public class Project3Algo {
-        public static void main(String[] args) {
-        System.out.println("enter input: ");
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         // problem instances
@@ -57,6 +56,7 @@ public class Project3Algo {
             int disconnectedMonths = 0;
             int numSets = 0;
 
+            // pop monarchies and process each dominion
             while (!monarchies.isEmpty()) {
                 Monarchy mon = monarchies.pop();
                 int[] dominions = mon.getDominions();
@@ -64,6 +64,7 @@ public class Project3Algo {
                 Dominion[] doms = new Dominion[dominions.length];
                 for (int j = 0; j < dominions.length; j++) {
                     int dom = dominions[j];
+                    // find coordinates for dominion 
                     int kk = dom / (n*m);
                     int mm = (dom % (n*m)) / n;
                     int nn = (dom % (n*m)) % n;
@@ -80,19 +81,16 @@ public class Project3Algo {
                     numSets--;
                 }
                 
-                System.out.println("number of sets: " + numSets);
-                
-                //check neighbors and connect if necessary
+                // check neighbors and connect if necessary
                 for(int j = 0; j < doms.length; j++){
                     Dominion dom = doms[j];
                     
-                    //check left
+                    // check left
                     if(dom.n > 0){
                         Dominion left = galaxy[dom.n - 1][dom.m][dom.k];
                         if(left != null && Set.findSet(left) != Set.findSet(dom)){
                             Set.union(dom, left);
                             numSets--;
-                            System.out.println("number of sets: " + numSets);
                         }
                     }
 
@@ -102,7 +100,6 @@ public class Project3Algo {
                         if (right != null && Set.findSet(right) != Set.findSet(dom)) {
                             Set.union(dom, right);
                             numSets--;
-                            System.out.println("number of sets: " + numSets);
                         }
                     }
 
@@ -112,7 +109,6 @@ public class Project3Algo {
                         if (front != null && Set.findSet(front) != Set.findSet(dom)) {
                             Set.union(dom, front);
                             numSets--;
-                            System.out.println("number of sets: " + numSets);
                         }
                     }
                     //check back
@@ -121,7 +117,6 @@ public class Project3Algo {
                         if (back != null && Set.findSet(back) != Set.findSet(dom)) {
                             Set.union(dom, back);
                             numSets--;
-                            System.out.println("number of sets: " + numSets);
                         }
                     }
                     //check up
@@ -130,7 +125,6 @@ public class Project3Algo {
                         if (up != null && Set.findSet(up) != Set.findSet(dom)) {
                             Set.union(dom, up);
                             numSets--;
-                            System.out.println("number of sets: " + numSets);
                         }
                     }
                     //check down
@@ -139,7 +133,6 @@ public class Project3Algo {
                         if (down != null && Set.findSet(down) != Set.findSet(dom)) {
                             Set.union(dom, down);
                             numSets--;
-                            System.out.println("number of sets: " + numSets);
                         }
                     }
                 }
