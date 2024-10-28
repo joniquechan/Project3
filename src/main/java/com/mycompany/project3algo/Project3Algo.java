@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.project3algo;
 import java.util.Scanner;
 import java.util.Stack;
@@ -16,9 +12,8 @@ import java.util.Stack;
  * ©Copyright Cedarville University, its Computer Science faculty, 
  * and the authors. All rights reserved.
  *
- * Description: This class is the main file that reads the input in,
+ * Description: This class is the main file that reads the input in.
  */
-
 
 public class Project3Algo {
     public static void main(String[] args) {
@@ -26,7 +21,7 @@ public class Project3Algo {
 
         // problem instances
         int problems = sc.nextInt();
-
+  
         for (int i = 0; i < problems; i++) {
             // 3d array dimensions
             int n = sc.nextInt(); 

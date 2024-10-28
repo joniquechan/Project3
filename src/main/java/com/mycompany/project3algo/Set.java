@@ -1,7 +1,7 @@
 package com.mycompany.project3algo;
 
 /**
- * This class is the main file.
+ * This class holds the methods for the Disjoint Sets.
  *
  * @author Roni Ebenezer, Jonique Chan
  * @version 1.0
@@ -10,12 +10,13 @@ package com.mycompany.project3algo;
  * ©Copyright Cedarville University, its Computer Science faculty, 
  * and the authors. All rights reserved.
  *
- * Description: This class contains the methods for a Disjoint Set data structure. It has a union method that takes two sets and combines them together.
- * It also has a makeSet method that creates a set given a Dominion object and a findSet method that returns the parent of a given Dominion object. 
+ * Description: This class contains the methods for a Disjoint Set data structure. 
+ * It has a union method that takes two sets and combines them together.
+ * It also has a makeSet method that creates a set given a Dominion object 
+ * and a findSet method that returns the parent of a given Dominion object. 
  */
 
 public class Set {
-
     // method to combine two sets together
     public static void union(Dominion x, Dominion y) {
         Dominion xparent = findSet(x);

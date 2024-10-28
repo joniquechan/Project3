@@ -1,7 +1,7 @@
 package com.mycompany.project3algo;
 
 /**
- * This class is the main file.
+ * This class represents the Monarchy object.
  *
  * @author Roni Ebenezer, Jonique Chan
  * @version 1.0
@@ -10,7 +10,9 @@ package com.mycompany.project3algo;
  * ©Copyright Cedarville University, its Computer Science faculty, 
  * and the authors. All rights reserved.
  *
- * Description: This class is for the Monarchy object. It contains a constructor that holds an array of dominion values and a getter that returns the dominions of the 
+ * Description: This class is for the Monarchy object. 
+ * It contains a constructor that holds an array of dominion values 
+ * and a getter that returns the dominions of the 
  * Monarchy. 
  */
 

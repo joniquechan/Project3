@@ -1,7 +1,7 @@
 package com.mycompany.project3algo;
 
 /**
- * This class is the main file.
+ * This class represents a Dominion.
  *
  * @author Roni Ebenezer, Jonique Chan
  * @version 1.0
@@ -10,9 +10,9 @@ package com.mycompany.project3algo;
  * ©Copyright Cedarville University, its Computer Science faculty, 
  * and the authors. All rights reserved.
  *
- * Description: This class is for the Dominion object where it contains a constructor that initializes the coordinates of a dominion as well as its rank. 
+ * Description: This class is for the Dominion object where it contains 
+ * a constructor that initializes the coordinates of a dominion as well as its rank. 
  * It also contains getters and setters for its parent and rank.
- *  
  */
 
 public class Dominion {
@@ -25,11 +25,11 @@ public class Dominion {
     public int k;
 
     // constructor 
-    public Dominion(int nn, int mm, int kk){
+    public Dominion(int x, int y, int z){
         rank = 0;
-        n = nn;
-        m = mm;
-        k = kk;
+        n = x;
+        m = y;
+        k = z;
     }
 
     // method to return parent of a dominion 
@@ -51,5 +51,4 @@ public class Dominion {
     public void setRank(int r){
         rank = r;
     }
-
 }
