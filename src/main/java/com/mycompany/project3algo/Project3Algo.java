@@ -16,7 +16,7 @@ import java.util.Stack;
  * ©Copyright Cedarville University, its Computer Science faculty, 
  * and the authors. All rights reserved.
  *
- * Description: This class is the main file that reads the input in and initializes the problems and corresponding solutions. 
+ * Description: This class is the main file that reads the input in,
  */
 
 
@@ -76,19 +76,19 @@ public class Project3Algo {
                     numSets++;
                 }
 
-                for(int j = 1; j < doms.length; j++){
+                for (int j = 1; j < doms.length; j++) {
                     Set.union(doms[0], doms[j]);
                     numSets--;
                 }
                 
                 // check neighbors and connect if necessary
-                for(int j = 0; j < doms.length; j++){
+                for (int j = 0; j < doms.length; j++) {
                     Dominion dom = doms[j];
                     
                     // check left
-                    if(dom.n > 0){
+                    if (dom.n > 0) {
                         Dominion left = galaxy[dom.n - 1][dom.m][dom.k];
-                        if(left != null && Set.findSet(left) != Set.findSet(dom)){
+                        if (left != null && Set.findSet(left) != Set.findSet(dom)) {
                             Set.union(dom, left);
                             numSets--;
                         }
